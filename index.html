@@ -5,16 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
 
+
     <div class="container">
-        <div id="menuContainer">
-            <img id="logo" src="assets/spark_logo.png" alt="spark logo">
+        
+            <div class="sidenav">
+                <a href="#" class="logo">
+                    <img class="logoImage" src="assets/acuity_logo.svg" alt="acuity logo">
+                    <img src="assets/logo_icon.svg" class="logoicon" alt="acuity logo">
+                </a>
+                <ul class="navLinks">
+                    <li><a href="#"><img class="navicon" src="assets/home.png" alt="home"><p>Home</p></a></li>
+                    <li><a href="classroom.html"><img class="navicon" src="assets/grid.png" alt="home"><p>My Classrooms</p></a></li>
+                    <li><a href="#"><img class="navicon" src="assets/user.png" alt="home"><p>Account</p></a></li>
+                    <div id="highight" class="active"></div>
+                </ul>
+            </div>
+
+        <div id="mainContainer">
+            <div class="banner">
+                <div class="mainHeading">Home</div>
+                <img class="bannerImage" src="assets/home_img.svg">
+            </div>
+            <div class="main">
+                <div class="intro">Hey Julia, <br> Get started by setting up your classroom!<br><a href="classroom.html"><button class="button">New Classroom<img class="buttonIcon" src="assets/add.png"></button></a></div>
+            </div>
         </div>
-        <div id="mainContainer"></div>
     </div>
+
+	<script src="script.js"></script>
     
 </body>
 </html>

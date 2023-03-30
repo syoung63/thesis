@@ -1,6 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     overflow: hidden;
     margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #393939;
 }
 
 .container{
@@ -8,17 +15,193 @@ body{
     height: 100vh;
 }
 
-#menuContainer{
+/* #menuContainer{
+    height: 100vh;
     flex-basis: 350px;
     background-color: rgb(255, 230, 253);
-}
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+} */
 
 #mainContainer{
     flex: 2;
-    background-color: rgb(204, 255, 255);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
-#logo{
-    width: 40%;
-    margin: 5%;
+/* Style the side navigation bar */
+.sidenav {
+    height: 100vh;
+    width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(169, 169, 169, 0.25);
 }
+
+.sidenav ul{
+    padding: 0px 0px 0px 18px;
+    position: fixed;
+    width: 300px;
+}
+
+.logo{
+    display: block;
+    margin: 10px 0px 50px 18px;
+}
+
+.logoImage{
+    width: 135px;
+    height: 50px;
+}
+
+/* Style the navigation links */
+.navLinks{
+    list-style: none;
+    position: relative;
+}
+
+.navLinks li{
+    padding: 20px 0px;
+}
+
+.navLinks li a{
+    color: #393939;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navLinks li:hover a{
+    transition: 0.3s;
+}
+
+.navLinks li a p{
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navicon{
+    width: 25px;
+    margin-right: 15px;
+}
+
+.active{
+    background: #f1f1f1;
+    width: 100%;
+    height: 47px;
+    position: absolute;
+    left: 0;
+    top: 4%;
+    z-index: -1;
+    border-radius: 6px;
+}
+
+#highlight{
+    display:none;
+}
+
+.navLinks li:hover ~ .active {
+    display: block;
+}
+
+.navLinks li:nth-child(1):hover ~ .active{
+    top: 4%;
+}
+
+.navLinks li:nth-child(2):hover ~ .active{
+    top: 38%;
+}
+
+.navLinks li:nth-child(3):hover ~ .active{
+    top: 71%;
+}
+
+.logoicon{
+    display: none;
+    width: 45px;
+}
+
+
+@media only screen and (max-width: 1200px){
+    .sidenav {
+        width: 100px;
+    }
+    .logoicon{
+        display: block;
+        width: 30px;
+    }
+    .logoImage{
+        display: none;
+    }
+    .navLinks li a p{
+        display: none;
+    }
+    .navicon{
+        margin-right: 0px;
+    }
+    .logo{
+        margin: 10px 0px 50px 15px;
+    }
+    .sidenav ul{
+        width: 63px;
+    }
+}
+
+.banner{
+    width: 100%;
+    height: 205px;
+    background-color: #fbfbfb;
+    display: flex;
+    padding: 15px;
+}
+
+.mainHeading{
+    font-size: 40px;
+    display: inline-block;
+    align-self: flex-end;
+    margin-left: 30px;
+}
+
+.bannerImage{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro{
+    width: 350px;
+    font-size: 27px;
+    text-align: center;
+}
+
+.button {
+    background-color: #0f87ff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    margin: 30px;
+  }
+
+  .button:hover {
+    background-color: #0062cc;
+  }
+
+  .buttonIcon{
+    width: 12px;
+    margin-left: 10px;
+  }
