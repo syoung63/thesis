@@ -35,36 +35,60 @@
                 <div class="mainHeading">Home</div>
                 <img class="bannerImage" src="assets/home_img.svg">
             </div>
-            <div class="main">
-                <div class="intro">Hey Julia, <br> Get started by setting up your classroom!<br>
+            <div id="intro" class="introMessage">
+                <div class="message">Hey Julia, <br> Get started by setting up your classroom!<br>
                     <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#addClassModal">
                         New Classroom<img class="buttonIcon" src="assets/add.png">
                     </button>
                 </div>
             </div>
 
-
+            <div id="classroomHome">
+              <div class="subHeading">My Classrooms</div>
+              <div id="classCard" class="classCard">
+                <img src="assets/shapes1.svg" class="shapes">
+                <div id="classTitle" class="classTitle"></div>
+              </div>
+            </div>
         </div>
         
     </div>
 
 
   <!-- Modal -->
-<div class="modal fade" id="addClassModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addClassModal" tabindex="-1" aria-labelledby="classModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-content text-center">
+        <div class="modal-header text-center border-0">
+          <h5 class="modal-title w-100" id="classModalLabel">Create Classroom</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+          <div class="form-group text-left w-75">
+            <label for="classTitleInput">Class Title</label>
+            <input type="text" class="form-control" id="classTitleInput">
+          </div>
+          <div class="form-group text-left w-75">
+            <label for="formControlInput1">Grade</label>
+            <input type="number" class="form-control" id="formControlInput2">
+          </div>
+          <div class="form-group text-left w-75">
+            <label for="formControlInput1">Number of Students</label>
+            <input type="number" class="form-control" id="formControlInput3">
+          </div>
+          <div class="form-group text-left w-75">
+            <label for="formControlInput4">Description</label>
+            <textarea class="form-control" id="formControlInput4" rows="3"></textarea>
+          </div>
+
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="js-add-class" class="btn btn-primary">Save changes</button>
+        <div class="modal-footer text-center border-0">
+          <div class="buttonWrapper w-100">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" id="js-add-class" class="btn btn-primary modalButton">Create Classroom</button>
+          </div>
         </div>
       </div>
     </div>
