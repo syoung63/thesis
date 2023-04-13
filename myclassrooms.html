@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- Bootstrap Links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <title>Home</title>
+    <title>Classroom</title>
 </head>
 <body>
 
 
     <div class="siteContainer">
             <div class="sidenav">
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                     <img class="logoImage" src="assets/acuity_logo.svg" alt="acuity logo">
                     <img src="assets/logo_icon.svg" class="logoicon" alt="acuity logo">
                 </a>
@@ -31,55 +31,66 @@
 
         <div id="mainContainer">
             <div class="banner">
-                <div id="classHeading" class="mainHeading"></div>
-                <img class="bannerImage3" src="assets/class_Img.svg">
+                <div class="mainHeading">My Classrooms</div>
+                <img class="bannerImage2" src="assets/classes_img.svg">
             </div>
             <div id="intro" class="introMessage">
-                <div class="message"><img class="introImg" src="assets/globe.svg"><br>Start building your classroom!<br>
-                    <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#addStudentModal">
-                        Add Student<img class="buttonIcon" src="assets/add.png">
+                <div class="message">Hey there, <br> Get started by setting up your classroom!<br>
+                    <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#addClassModal">
+                        New Classroom<img class="buttonIcon" src="assets/add.png">
                     </button>
                 </div>
             </div>
 
-            <div id="classroomPage">
-              <div id="studentCardsContainer"></div>
-              <button type="button" class="btn btn-primary button cornerButton" data-toggle="modal" data-target="#addStudentModal">
-                Add Student<img class="buttonIcon" src="assets/add.png">
-            </button>
+            <div id="classroomHome">
+              <div class="subHeading">My Classrooms</div>
+              <div id="cardsContainer">
+                <button type="button" class="cardButton" data-toggle="modal" data-target="#addClassModal">
+                  <div id="addclassCard" class="classCard">
+                    <img src="assets/add_circle.svg" class="cardImg">
+                    <div class="classTitle">Add Class</div>
+                  </div>
+                </button>
+              </div>
+            </div>
         </div>
         
     </div>
 
 
   <!-- Modal -->
-<div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+<div class="modal fade" id="addClassModal" tabindex="-1" aria-labelledby="classModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content text-center">
         <div class="modal-header text-center border-0">
-          <h5 class="modal-title w-100" id="studentModalLabel">Add Student</h5>
+          <h5 class="modal-title w-100" id="classModalLabel">Create Classroom</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <div class="form-group text-left w-75">
-            <label for="studentNameInput">Student Name</label>
-            <input type="text" class="form-control" id="studentNameInput">
+            <label for="classTitleInput">Class Title</label>
+            <input type="text" class="form-control" id="classTitleInput">
           </div>
           <div class="form-group text-left w-75">
-            <label for="studentGradeInput">Grade</label>
-            <input type="number" class="form-control" id="studentGradeInput">
+            <label for="classGradeInput">Grade</label>
+            <input type="number" class="form-control" id="classGradeInput">
           </div>
           <div class="form-group text-left w-75">
-            <label for="studentAgeInput">Age</label>
-            <input type="number" class="form-control" id="studentAgeInput">
+            <label for="classSizeInput">Number of Students</label>
+            <input type="number" class="form-control" id="classSizeInput">
+          </div>
+          <div class="form-group text-left w-75">
+            <label for="classDescriptionInput">Description</label>
+            <textarea class="form-control" id="classDescriptionInput" rows="3"></textarea>
           </div>
 
         </div>
         <div class="modal-footer text-center border-0">
           <div class="buttonWrapper w-100">
-            <button type="button" id="js-add-student" class="btn btn-primary modalButton">Add Student</button>
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" id="js-add-class" class="btn btn-primary modalButton">Create Classroom</button>
           </div>
         </div>
       </div>
@@ -90,9 +101,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-<script src="script.js"></script>
-<script src="classroom.js"></script>
-
+<script src="script.js"></script> 
     
 </body>
 </html>
