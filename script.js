@@ -131,6 +131,7 @@ function createClassCard(classroomName) {
         studentLink = document.createElement("a");
         studentLink.style.textDecoration = "none";
         studentLink.href="/studentProfile.html";
+        studentLink.setAttribute("onclick", "return false;");
         studentCardsContainer.appendChild(studentLink);
 
         studentCard = document.createElement("div");
