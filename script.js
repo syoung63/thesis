@@ -5,15 +5,11 @@ let path = window.location.pathname;
 // Display the highlight over which page the user is on in the nav bar
 let selected = document.getElementById("highlight");
 
-// if (path == "/index.html") {
-//     selected.style.display = "block";
-// }else if(path == "/classroom.html"){
-//     selected.style.top = "38%";
-// }
-
-
 // State 
 let classroomName, savedClassroomName, classHeading;
+
+//Creates an array for classroom names
+let classroomNames = [];
 
 let classTitleInput = document.getElementById('classTitleInput');
 let introContainer = document.getElementById('intro');
@@ -21,6 +17,7 @@ let classHome = document.getElementById('classroomHome');
 let cardsContainer = document.getElementById('cardsContainer');
 let addClassBtn = document.querySelector('#js-add-class');
 
+//save inputted class information and creates a card when button is clicked
 if (addClassBtn) {
     addClassBtn.addEventListener('click', function(){
       
@@ -30,31 +27,27 @@ if (addClassBtn) {
         introContainer.style.display = 'none';
         classHome.style.display = 'flex';
 
+        classroomNames.push(classroomName);
+        sessionStorage.setItem('classroomsList', JSON.stringify(classroomNames));
+
         createClassCard(classroomName);
 
         $('#addClassModal').modal('hide')
     })
 }
 
-if(path == "/index.html"){
+//displays classes on home page or my classrooms page if the user has created them already
+if(path == "/index.html" || path == "/myclassrooms.html"){
     classroomName = sessionStorage.getItem("savedClassroomName");
+    classroomNames = JSON.parse(sessionStorage.getItem('classroomsList'));
     
     if(classroomName !== null){
         introContainer.style.display = 'none';
         classHome.style.display = 'flex';
 
-        createClassCard(classroomName);
-    }
-}
+        //runs create class card for each class that has been created
+        classroomNames.forEach(createClassCard);
 
-if(path == "/myclassrooms.html"){
-    classroomName = sessionStorage.getItem("savedClassroomName");
-    
-    if(classroomName !== null){
-        introContainer.style.display = 'none';
-        classHome.style.display = 'flex';
-
-        createClassCard(classroomName);
     }
 }
 
@@ -66,17 +59,15 @@ let classPage = document.getElementById('classroomPage');
 let studentCardsContainer = document.getElementById('studentCardsContainer');
 let studentGradeInput = document.getElementById('studentGradeInput');
 
-
+//save inputted student information and creates a card when button is clicked
 if (addStudentBtn) {
     addStudentBtn.addEventListener('click', function(){
       
         studentName = studentNameInput.value;
         sessionStorage.setItem("savedStudentName", studentName);
-        studentName = sessionStorage.getItem("savedStudentName");
 
         studentGrade = studentGradeInput.value;
         sessionStorage.setItem("savedStudentGrade", studentGrade);
-        studentGrade = sessionStorage.getItem("savedStudentGrade");
 
         introContainer.style.display = 'none';
         classroomPage.style.display = 'flex';
@@ -87,6 +78,8 @@ if (addStudentBtn) {
     })
 }
 
+//displays students on classroom page if the user has created them already
+//couldn't find a way to put them in array as well without getting an error
 if(path == "/classroom.html"){
     studentName = sessionStorage.getItem("savedStudentName");
     studentGrade = sessionStorage.getItem("savedStudentGrade");
@@ -94,14 +87,14 @@ if(path == "/classroom.html"){
     if(studentName !== null){
         introContainer.style.display = 'none';
         classroomPage.style.display = 'flex';
-
+        
+        //creates a card with the student name and grade that has been saved
         createStudentCard(studentName, studentGrade);
     }
 }
 
-
-
-function createClassCard(classroomName) {
+    //grabs classroom name and creates a card for it
+    function createClassCard(classroomName) {
         // Create the link element and append it to the cardsContainer element
         let classLink = document.createElement("a");
         classLink.style.textDecoration = "none";
@@ -126,27 +119,34 @@ function createClassCard(classroomName) {
         classCard.appendChild(classTitle);
   }
 
-  //create a card for the student using the student's name
+
+  //creates a card for the student using the student's name
   function createStudentCard(studentName, studentGrade) {
+        
+    // Create the link element and append it to the cardsContainer element
         studentLink = document.createElement("a");
         studentLink.style.textDecoration = "none";
         studentLink.href="/studentProfile.html";
         studentLink.setAttribute("onclick", "return false;");
         studentCardsContainer.appendChild(studentLink);
 
+        // Create the class card div element and append it to the link element
         studentCard = document.createElement("div");
         studentCard.setAttribute("class", "studentCard");
         studentLink.appendChild(studentCard);
 
+        //create container for student info
         studentInfo = document.createElement("div");
         studentInfo.setAttribute("class", "studentInfo");
         studentCard.appendChild(studentInfo);
 
+        //displays student name and appends it to the student info container
         studentTitle = document.createElement("div");
         studentTitle.setAttribute("class", "studentName");
         studentTitle.textContent = studentName; 
         studentInfo.appendChild(studentTitle);
 
+        //displays the student grade if a grade was inputted
         if(studentGrade){
             studentGradeHeading = document.createElement("div");
             studentGradeHeading.setAttribute("class", "studentGrade");
@@ -154,6 +154,7 @@ function createClassCard(classroomName) {
             studentInfo.appendChild(studentGradeHeading);
         }
 
+        // Create the profile image element for the card and append it to the studentCard element
         let profileImg = document.createElement("img");
         profileImg.src = "assets/default_profile.svg";
         profileImg.setAttribute("class", "profileImg");

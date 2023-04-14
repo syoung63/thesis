@@ -16,6 +16,7 @@
 
 
     <div class="siteContainer">
+      <!-- holds navigation bar -->
             <div class="sidenav">
                 <a href="#" class="logo">
                     <img class="logoImage" src="assets/acuity_logo.svg" alt="acuity logo">
@@ -29,11 +30,13 @@
                 </ul>
             </div>
 
+        <!-- holds main section of the screen -->
         <div id="mainContainer">
             <div class="banner">
                 <div id="classHeading" class="mainHeading"></div>
                 <img class="bannerImage3" src="assets/class_Img.svg">
             </div>
+            <!-- intro message that appears when user hasn't created any classrooms yet -->
             <div id="intro" class="introMessage">
                 <div class="message"><img class="introImg" src="assets/globe.svg"><br>Start building your classroom!<br>
                     <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#addStudentModal">
@@ -42,6 +45,7 @@
                 </div>
             </div>
 
+            <!-- classroom page appears when user has created a classroom -->
             <div id="classroomPage">
               <div id="studentCardsContainer"></div>
               <button type="button" class="btn btn-primary button cornerButton" data-toggle="modal" data-target="#addStudentModal">
@@ -52,7 +56,7 @@
     </div>
 
 
-  <!-- Modal -->
+  <!-- Add Student Modal -->
 <div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content text-center">

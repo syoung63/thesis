@@ -16,6 +16,7 @@
 
 
     <div class="siteContainer">
+      <!-- holds navigation bar -->
             <div class="sidenav">
                 <a href="#" class="logo">
                     <img class="logoImage" src="assets/acuity_logo.svg" alt="acuity logo">
@@ -29,11 +30,13 @@
                 </ul>
             </div>
 
+        <!-- holds main section of the screen -->
         <div id="mainContainer">
             <div class="banner">
                 <div class="mainHeading">Home</div>
                 <img class="bannerImage1" src="assets/home_img.svg">
             </div>
+            <!-- intro message that appears when user hasn't created any classrooms yet -->
             <div id="intro" class="introMessage">
                 <div class="message">Hey there, <br> Get started by setting up your classroom!<br>
                     <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#addClassModal">
@@ -42,6 +45,7 @@
                 </div>
             </div>
 
+            <!-- classroom home page appears when user has created a classroom -->
             <div id="classroomHome">
               <div class="subHeading">My Classrooms</div>
               <div id="cardsContainer">
@@ -58,7 +62,7 @@
     </div>
 
 
-  <!-- Modal -->
+  <!-- Create Classroom Modal -->
 <div class="modal fade" id="addClassModal" tabindex="-1" aria-labelledby="classModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content text-center">
@@ -101,7 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-<script src="script.js"></script> 
+    <script src="script.js"></script> 
     
 </body>
 </html>
