@@ -98,7 +98,7 @@ if(path == "/classroom.html"){
         // Create the link element and append it to the cardsContainer element
         let classLink = document.createElement("a");
         classLink.style.textDecoration = "none";
-        classLink.href = "https://syoung63.github.io/thesis/myclassrooms.html";
+        classLink.href = "akjska";
         cardsContainer.appendChild(classLink);
     
         // Create the class card div element and append it to the link element
